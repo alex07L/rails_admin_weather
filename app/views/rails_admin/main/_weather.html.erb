@@ -1,5 +1,5 @@
 <% response = JSON.parse(HTTP.get("http://api.weatherapi.com/v1/forecast.json?key="+@abstract_model.model.data[0][:apiKey]+"&q="+@abstract_model.model.data[0][:zipCode]+"&days=7").body) %>
-
+<% puts params %>
 <% response['forecast']['forecastday'].each do |temp| %>
 <div class="col-2">
     <div class="card" style="width: 18rem;">
