@@ -1,0 +1,7 @@
+en:
+  admin:
+    actions:
+      weather:
+        title: Weather
+        menu: Weather
+        breadcrumb: Weather

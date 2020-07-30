@@ -1,0 +1,41 @@
+<% response = JSON.parse(HTTP.get("http://api.weatherapi.com/v1/forecast.json?key="+@abstract_model.model.data[0][:apiKey]+"&q="+@abstract_model.model.data[0][:zipCode]+"&days=7").body) %>
+
+<% response['forecast']['forecastday'].each do |temp| %>
+<div class="col-2">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <img src="<%= temp['day']['condition']['icon']%>" alt="weather img">
+        <h5 class="card-title"><%= temp['date']%></h5>
+        <p class="card-text"><%= temp['day']['condition']['text']%></p>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Max temp:</td>
+                    <td><%= temp['day']['maxtemp_c']%> °C</td>
+                </tr>
+                <tr>
+                    <td>Mim temp:</td>
+                    <td><%= temp['day']['mintemp_c']%> °C</td>
+                </tr>
+                <tr>
+                    <td>AVG temp:</td>
+                    <td><%= temp['day']['avgtemp_c']%> °C</td>
+                </tr>
+                <tr>
+                    <td>Total precipitation:</td>
+                    <td><%= temp['day']['totalprecip_mm']%> mm</td>
+                    </tr>
+                    <tr>
+                        <td>AVG win:</td>
+                        <td><%= temp['day']['avgvis_km']%> km</td>
+                    </tr>
+                    <tr>
+                        <td>UV:</td>
+                        <td><%= temp['day']['uv']%></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>                    
+</div>
+<% end %>
