@@ -1,4 +1,4 @@
-<% response = JSON.parse(HTTP.get("http://api.weatherapi.com/v1/forecast.json?key="+@abstract_model.model.data[0][:apiKey]+"&q="+@abstract_model.model.data[0][:zipCode]+"&days=7").body) %>
+<% response = JSON.parse(HTTP.get("http://api.weatherapi.com/v1/forecast.json?key="+@abstract_model.model.data[0][:apiKey]+"&q="+Building.find_by(id: params[:id]).address.postalCode.to_s+"&days=7").body) %>
 <% puts params %>
 <% response['forecast']['forecastday'].each do |temp| %>
 <div class="col-2">

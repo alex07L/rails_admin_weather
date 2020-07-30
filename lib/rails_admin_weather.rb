@@ -11,8 +11,7 @@ module RailsAdminWeather
 	[
           {
               name: model_name.plural,
-			  apiKey: "",
-              zipCode: ""
+			  apiKey: ""
           }
       ]
     end
