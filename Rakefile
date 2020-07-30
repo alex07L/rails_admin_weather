@@ -14,7 +14,7 @@ end
 
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'RailsAdminCharts'
+  rdoc.title    = 'RailsAdminWeather'
   rdoc.options << '--line-numbers'
   rdoc.rdoc_files.include('README.md')
   rdoc.rdoc_files.include('lib/**/*.rb')

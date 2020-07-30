@@ -21,4 +21,4 @@ module RailsAdminWeather
 end
 
 #require 'rails_admin/config/actions'
-require 'rails_admin_weather/rails_admin/config/actions/charts'
+require 'rails_admin_weather/rails_admin/config/actions/weather'
