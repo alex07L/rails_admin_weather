@@ -9,7 +9,7 @@ module RailsAdmin
         end
 
         register_instance_option :visible do
-          bindings[:abstract_model].model < RailsAdminWeather
+          authorized? && (bindings[:controller].main_app.url_for(bindings[:object]) rescue false)
         end
 
         register_instance_option :http_methods do
